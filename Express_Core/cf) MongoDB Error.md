@@ -10,3 +10,5 @@
 ![image](https://user-images.githubusercontent.com/63600953/132455656-326bb579-8976-46d9-a0ce-bc5e641efc33.png)
 2. 현재의 IP주소를 Cluster에서 허용한다.   
 ![image](https://user-images.githubusercontent.com/63600953/132455872-dbb444a6-77de-40aa-800f-97e83613f8de.png)
+
+참고 : https://velog.io/@kjy5947/mongoose%EC%9D%B4%EC%9A%A9%ED%95%98%EC%97%AC-mongoDB%EC%97%B0%EA%B2%B0%EC%8B%9C-%EC%97%90%EB%9F%AC
