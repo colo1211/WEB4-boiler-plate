@@ -2,8 +2,9 @@
 import axios from 'axios'; 
 import { 
     LOGIN_USER,
-    REGISTER_USER
-} from './types'; 
+    REGISTER_USER,
+    AUTH_USER
+} from './types';
 
 // 여기에 dataToSubmit에 body 가 들어감. (dataSubmit : login/password 등의 정보가 Object 형태로 들어감)
 export function loginUser(dataToSubmit){
@@ -43,3 +44,15 @@ export function registerUser(dataToSubmit){
     }
 }
 
+export function authUser(dataToSubmit){
+
+    const request = axios.get('/api/users/auth')
+        .then((response)=>
+           response.data
+        );
+
+    return {
+        type : AUTH_USER,
+        payload : request
+    }
+}
