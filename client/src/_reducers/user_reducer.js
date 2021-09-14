@@ -1,4 +1,8 @@
-import { LOGIN_USER, REGISTER_USER, LOGOUT_USER} from "../_actions/types";
+import {
+    LOGIN_USER,
+    REGISTER_USER,
+    AUTH_USER
+} from "../_actions/types";
 
 // type 에 따라 다른 조치를 취해야 하므로 switch 문으로 작성
 
@@ -14,8 +18,21 @@ export default function (state = {}, action){
 
         case REGISTER_USER : 
             return {...state, success : action.payload}
-            break; 
-    
+            break;
+
+        case AUTH_USER:
+            return {...state, userData : action.payload}
+            break;
+        // userData는 아래와 같은 정보가 담기게 된다.
+        //     _id: req.user._id,
+        //         isAdmin: req.user.role === 0 ? false : true,
+        //     isAuth: true,
+        //     email: req.user.email,
+        //     name: req.user.name,
+        //     lastname: req.user.lastname,
+        //     role: req.user.role,
+        //     image: req.user.image
+
   
         // action.type 이 비어있다면, 초기상태의 state를 리턴
         default:
