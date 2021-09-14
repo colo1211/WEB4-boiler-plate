@@ -8,6 +8,8 @@ Back-End : Express.js
 Front-End : React.js 
 ```
 
+## React&Express_Core 폴더 내에 학습을 진행하며 얻은 지식들을 md파일로 정리하였음.
+
 ## 해당 Repo 학습을 통해 얻은 것
 ##### ⚠ Server 와의 Interaction 통신 및 Redux를 통한 상태관리를 위한 레포이므로, CSS 및 디자인 레이아웃에 대한 요소는 배제하였음. 
 
