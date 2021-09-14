@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'; 
 import { loginUser } from '../../../_actions/user_action';
-import { useHistory } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
 function LoginPage(props) {
 
-    const history = useHistory(); 
     const dispatch = useDispatch(); 
 
     const [Email, setEmail] = useState(''); 
@@ -39,7 +38,7 @@ function LoginPage(props) {
         .then(response => {
             // 로그인 성공한다면
             if (response.payload.loginSuccess){
-                history.push('/'); 
+                props.history.push('/'); 
             }
             // 로그인 실패한다면
             else {
@@ -68,4 +67,4 @@ function LoginPage(props) {
     )
 }
 
-export default LoginPage;
+export default withRouter(LoginPage);

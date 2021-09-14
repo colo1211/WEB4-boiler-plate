@@ -2,13 +2,12 @@ import React, { useEffect } from 'react'
 import axios from 'axios'; 
 import { useDispatch } from 'react-redux'; 
 import { logoutUser } from '../../../_actions/user_action'
-import { useHistory } from 'react-router';
+import { withRouter } from 'react-router-dom'; 
 
-function LandingPage() {
 
-    const history = useHistory(); 
+function LandingPage(props) {
+
     const dispatch = useDispatch(); 
-
 
     // LogOut은 Redux 에 올릴 정보가 없으므로 이벤트리스너를 통해서 server/index.js 내 의 
     // /api/users/logout 과 통신하여 success:true 를 받아오면 로그아웃 되도록 한다. 
@@ -17,7 +16,7 @@ function LandingPage() {
         axios.get('/api/users/logout')
         .then((response)=>{
             if(response.data.success){
-                history.push('/login'); 
+                props.history.push('/login'); 
             }else {
                 alert('Sign Out Failed'); 
             }
@@ -45,4 +44,4 @@ function LandingPage() {
     )
 }
 
-export default LandingPage
+export default withRouter(LandingPage);
